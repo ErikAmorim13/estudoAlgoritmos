@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Planet</title>
+</head>
+<body>
+
+    Valor da pizza: <input id="ipt_valor">
+    <p></p>
+    Dividir entre quantos amigos? <input id="ipt_amigos">
+    <p></p>
+    <button onclick="pizza()">Rola a Pizza?</button>
+    <p></p>
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    function pizza(){
+        var preco = Number(ipt_valor.value) / Number(ipt_amigos.value)
+
+       if(preco > 20){
+            div_msg.innerHTML = `Pizza cara! Deu ruim! R$${preco.toFixed(2)} para cada amigo`
+       }else{
+            div_msg.innerHTML = `A pizza vai custar R$${preco.toFixed(2)} para cada amigo`
+       }
+    }
+</script>

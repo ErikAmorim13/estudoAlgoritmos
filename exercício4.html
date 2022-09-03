@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Notas</title>
+</head>
+<body>
+    <input id="nota_escola" type="number">Informe sua nota:
+    <button onclick="opiniaoVo()">Opinião da vó</button>
+    <button onclick="opiniaoMae()">Opinião da Mãe</button>
+
+</body>
+
+    <script>
+        function opiniaoVo() {
+            alert('Muito bem, que neto inteligente, porque tirou'+ ' '+ nota_escola.value)
+        }
+
+        function opiniaoMae() {
+            alert('Não fez mais que tua obrigação com essa nota'+ ' '+ nota_escola.value)
+        }
+
+    </script>
+</html>

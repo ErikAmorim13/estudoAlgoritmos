@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta de Luz</title>
+</head>
+<body>
+
+    Quantos kWh consumidos no mês? <input id="ipt_kwh">
+    <p></p>
+    <button onclick="calcula()">Gasto Mensal</button>
+    
+</body>
+</html>
+
+<script>
+    function calcula() {
+        var preco = Number(ipt_kwh.value) * 0.85
+
+        if(ipt_kwh.value < 100){
+            preco = preco * 0.90
+        }else{
+            preco = preco
+        }
+
+        alert(`Você pagará R$${preco.toFixed(2)}`)
+    }
+</script>

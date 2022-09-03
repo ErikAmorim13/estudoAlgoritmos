@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serasa</title>
+</head>
+<body>
+
+    Renda Familiar: <input id="ipt_renda">
+    Número de Prestações: <input id="ipt_prestacao">
+    <p></p>
+
+    <button onclick="financia()">Verificar Financiamento </button>
+
+    <p></p>
+
+    <div>
+        <b id="msg" style="color: red;"></b>
+    </div>
+</body>
+</html>
+
+<script>
+    function financia(){
+        var porcentagem = (Number(ipt_prestacao.value) / Number(ipt_renda.value) ) * 100
+
+        if(porcentagem > 30){
+            msg.innerHTML = `Será necessário complementar a renda familiar!! Corresponde a ${porcentagem.toFixed(0)}% da renda`
+        }else{
+            msg.innerHTML = `O financiamento corresponde a ${porcentagem.toFixed(0)}% da renda`
+        }
+    }
+</script>

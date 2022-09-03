@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto</title>
+</head>
+<body>
+    <h1>Mercado do Sr Manoel</h1>
+    <p></p>
+    Nome do produto: <input id="nome_prod">
+    <p></p>
+    Quantidade: <input id="qtd_prod">
+    <p></p>
+    Preço: <input id="preco_prod">
+    <p></p>
+    <button onclick="calculo()">Calcular preço e margem de venda</button>
+    <p></p>
+    <div id="div_msg"></div>
+
+
+</body>
+</html>
+
+<script>
+    function calculo() {
+        var precoVenda = Number(preco_prod.value) * 1.22.toFixed(2)
+        var valorTotal = precoVenda * Number(qtd_prod.value).toFixed(2)
+        var lucroTotal = precoVenda * qtd_prod.value
+
+        div_msg.innerHTML = `Nome do produto: ${nome_prod.value}
+        <p>Quantidade: ${qtd_prod.value}</p>
+        <p>Preço de compra: R$ ${preco_prod.value}</p>
+        <p>Preço de Venda: R$${precoVenda}</p>
+        <p>Valor de Venda total: R$${valorTotal}</p>
+        <p>Lucro: ${lucroTotal}%</p>
+        <p>Preço Unitário tributado: ${precoVenda + 1.25} </p>`
+
+        
+    }
+</script>

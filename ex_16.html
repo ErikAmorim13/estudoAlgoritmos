@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4migas</title>
+</head>
+<body>
+
+    Valor por grama de sorvete: <input id="ipt_valor">
+    <p></p>
+    Peso do Sorvete: <input id="ipt_peso">
+    <p></p>
+    Tipo de Cobertura: <input id="ipt_cbt">
+    <p></p>
+    Tipo de Sorvete: <input id="ipt_tipo">
+    <p></p>
+    <button onclick="calcula()">Calcular Gasto: </button>
+    <p></p>
+    <div id="div_msg"></div>
+    
+</body>
+</html>
+
+<script>
+    function calcula() {
+
+        var preco = Number(ipt_peso.value) * Number(ipt_valor.value)
+
+        if(ipt_tipo.value != 'G'){
+            preco = (Number(ipt_valor.value) * 0.90) * Number(ipt_peso.value)
+        }else{
+            preco = (Number(ipt_valor.value) * 1.11) * Number(ipt_peso.value)
+        }
+        
+        if(ipt_cbt.value != 'C'){
+            preco = (Number(ipt_valor.value) + 0.01) * Number(ipt_peso.value)
+        }else{
+            preco = preco
+        }
+
+
+        if(preco > 10.00){
+            div_msg.innerHTML = `O seu sorvete vai custar R$${preco.toFixed(2)} e vai comprometer a mesada`
+        }else{
+            div_msg.innerHTML = `Você está maneirando hoje. Vai gastar só R$${preco.toFixed(2)}`
+        }
+    }
+</script>

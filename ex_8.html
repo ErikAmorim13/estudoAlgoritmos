@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevador</title>
+</head>
+<body>
+
+    Quantos homens? <input id="ipt_homem">
+    <p></p>
+    Quantas Mulheres? <input id="ipt_mulher">
+    <p></p>
+    <button onclick="peso()">Analisar Capacidade</button>
+    <p></p>
+    <div id="div_msg">
+        <span id="msg1"></span>
+        <p></p>
+        <span id="msg" style="color: blue;"></span>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    function peso() {
+        var masc = Number(ipt_homem.value) * 80
+        var fem = Number(ipt_mulher.value) * 60
+        var total = masc + fem
+        
+        if(total > 800){
+            msg.innerHTML = `Será necessário alguém descer!`;
+            msg1.innerHTML = `O peso estimado da lotação é de ${total.toFixed(0)} KG`
+        }else{
+            msg1.innerHTML = `O peso estimado da lotação é de ${total.toFixed(0)} KG`
+        }
+
+    }
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saldo</title>
+</head>
+<body>
+    <h1>Contabilidade Balança</h1>
+
+    Saldo Anterior:<input type="text" id="ipt_saldoAnterior">
+    <p></p>
+    Valor débito: <input type="text" id="ipt_debito">
+    <p></p>
+    Valor Crédito: <input id="ipt_credito">
+    <p></p>
+    <button onclick="calculoCartao()">Calcular</button>
+    <p></p>
+
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    function calculoCartao(){
+        var saldoFinal = (Number(ipt_saldoAnterior.value)
+         + Number(ipt_credito.value)) - Number(ipt_debito.value).toFixed(2)
+        var dif = (saldoFinal) - Number(ipt_saldoAnterior.value).toFixed(2)
+        var proporcao = (Number(ipt_saldoAnterior.value)/(saldoFinal) * 100).toFixed(2) + '%'
+        var movimentacao = Number(ipt_credito.value) - Number(ipt_debito.value).toFixed(2)
+
+        div_msg.innerHTML = `Saldo Anterior: R$${ipt_saldoAnterior.value}
+        <p>Movimentação: R$${movimentacao}</p>
+        <p>Saldo Final: R$${saldoFinal}</p>
+        <p>Diferença: R$${dif}</p>
+        <p>Proporção:${proporcao}</p>`
+
+        ipt_saldoAnterior.value = ' '
+        ipt_debito.value = ' '
+        ipt_credito.value = ' '
+    }
+</script>
