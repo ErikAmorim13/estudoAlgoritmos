@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fechamento Bimestre</title>
+</head>
+<body>
+    Insira 1° nota: <input id="ipt_um">
+    <p></p>
+    Insira 2° nota: <input id="ipt_dois">
+    <p></p>
+    Insira 3° nota: <input id="ipt_tres">
+    <p></p>
+    <button onclick="calcula()">Calcular Média: </button>
+    <p></p>
+    <span id="msg"></span>
+    
+</body>
+</html>
+
+<script>
+    function calcula(){
+        var media = (Number(ipt_um.value) + Number(ipt_dois.value) + Number(ipt_tres.value)) / 3
+
+        if (media > 9.5){
+            msg.innerHTML = `Média de ${media.toFixed(1)}, aluno fora da curva!`
+        }else if(media > 7){
+            msg.innerHTML = `Média de ${media.toFixed(1)}, aluno acima da média!`
+        }else if(media > 5){
+            msg.innerHTML = `Média de ${media.toFixed(1)}, aluno na média`
+        }else{
+            msg.innerHTML = `Média de ${media.toFixed(1)}, aluno precisa de reforço`
+        }
+    }
+</script>

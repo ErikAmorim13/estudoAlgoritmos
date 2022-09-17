@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoGard</title>
+</head>
+<body>
+
+    Nome do atleta: <input id="ipt_nome">
+    Faixa conquistada: <input id="ipt_faixa">
+    <br>
+    Vitórias: <input id="ipt_vit">
+    Empates: <input id="ipt_emp">
+    Derrotas: <input id="ipt_der">
+    <button onclick="calcula()">Estatísticas</button>
+    <div id="div_msg">
+
+    </div>
+    
+</body>
+
+<script>
+    function calcula(){
+        var lutas = Number(ipt_vit.value) + Number(ipt_emp.value) + Number(ipt_der.value)
+        
+        if(ipt_faixa.value == 'Preta'){
+            var pontoInicial = 50000
+            var pontoVit = (Number(ipt_vit.value) * 500)
+            var pontoDer = (0 - (500 * 0.50)) * Number(ipt_der.value)
+            var venceTodas = (lutas * 500) + pontoInicial
+            var empate = Number(ipt_emp.value) * 2 
+            var totalPontos = pontoInicial + pontoVit + empate + pontoDer
+
+        }else if(ipt_faixa.value == 'Marrom'){
+            var pontoInicial = 25000
+            var pontoVit = (Number(ipt_vit.value) * 300)
+            var pontoDer = (0 - (300 * 0.50)) * Number(ipt_der.value)
+            var venceTodas = (lutas * 300) + pontoInicial 
+            var empate = Number(ipt_emp.value) * 2 
+            var totalPontos = pontoInicial + pontoVit+ empate + pontoDer
+
+        }else if(ipt_faixa.value == 'Roxa'){
+            var pontoInicial = 15000
+            var pontoVit = (Number(ipt_vit.value) * 150)
+            var pontoDer = (0 - (150 * 0.50)) * Number(ipt_der.value) 
+            var venceTodas = (lutas * 150) + pontoInicial 
+            var empate = Number(ipt_emp.value) * 2
+            var totalPontos = pontoInicial + pontoVit + empate + pontoDer
+
+        }else if(ipt_faixa.value == 'Verde'){
+            var pontoInicial = 10000
+            var pontoVit = (Number(ipt_vit.value) * 100)
+            var pontoDer = (0 - (100 * 0.50)) * Number(ipt_der.value)
+            var venceTodas = (lutas * 100) + pontoInicial 
+            var empate = Number(ipt_emp.value) * 2
+            var totalPontos = pontoInicial + pontoVit + empate + pontoDer
+
+        }else if(ipt_faixa.value == 'Laranja'){
+            var pontoInicial = 5000
+            var pontoVit = (Number(ipt_vit.value) * 60)
+            var pontoDer = (0 - (60 * 0.50)) * Number(ipt_der.value)
+            var venceTodas = (lutas * 60) + pontoInicial 
+            var empate = Number(ipt_emp.value) * 2
+            var totalPontos = pontoInicial + pontoVit + empate + pontoDer
+
+        }else if(ipt_faixa.value == 'Amarela'){
+            var pontoInicial = 2000
+            var pontoVit = (Number(ipt_vit.value) * 30)
+            var pontoDer = (0 - (30 * 0.50)) * Number(ipt_der.value) 
+            var venceTodas = (lutas * 30) + pontoInicial 
+            var empate = Number(ipt_emp.value) * 2
+            var totalPontos = pontoInicial + pontoVit + empate + pontoDer
+
+        }else if(ipt_faixa.value == 'Azul'){
+            var pontoInicial = 1000
+            var pontoVit = (Number(ipt_vit.value) * 10)
+            var pontoDer = (0 - (10 * 0.50)) * Number(ipt_der.value)
+            var venceTodas = (lutas * 10) + pontoInicial 
+            var empate = Number(ipt_emp.value) * 2
+            var totalPontos = pontoInicial + pontoVit+ empate + pontoDer
+
+        }else{
+            var pontoInicial = 0
+            var pontoVit = (Number(ipt_vit.value) * 4)
+            var pontoDer = (0 - (4 * 0.50)) * Number(ipt_der.value)
+            var venceTodas = (lutas * 4) + pontoInicial 
+            var empate = Number(ipt_emp.value) * 2 
+            var totalPontos = pontoInicial + empate + pontoVit + pontoDer
+        }
+
+        var pct_pontosIniciais = (pontoInicial / totalPontos) * 100
+        var pct_pontosLutas = (pontoVit / pontoInicial) * 100
+        var pct_vitorias = (Number(ipt_vit.value) / lutas) * 100
+        var pct_derrotas = ((Number(ipt_der.value) + Number(ipt_emp.value))/ lutas) * 100 
+        venceTodas = venceTodas
+        var pct_total = (totalPontos / venceTodas) * 100
+
+        div_msg.innerHTML += `<br><br>${ipt_nome.value}, da faixa ${ipt_faixa.value} tem ${totalPontos} pontos, sendo ${pct_pontosIniciais.toFixed(2)}% dos pontos iniciais da faixa e ${pct_pontosLutas.toFixed(2)}% em pontos conquistados em lutas. Total de lutas: ${lutas} sendo ${pct_vitorias.toFixed(2)}% vitórias e ${pct_derrotas.toFixed(2)}% derrotas ou empates
+Se ${ipt_nome.value} tivesse vitória em todas as lutas ele teria ${venceTodas} pontos, hoje ele tem ${pct_total.toFixed(2)}% do total`
+    }
+</script>

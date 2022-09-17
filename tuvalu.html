@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serasa</title>
+</head>
+<body>
+    Digite sua renda: <input id="ipt_renda">
+    <p></p>
+    <button onclick="calcula()">Analisar Renda</button>
+    <p></p>
+    <span id="msg"></span>
+    
+</body>
+</html>
+
+<script>
+    function calcula() {
+        var renda = ipt_renda.value
+
+        if(renda > 9500){
+            msg.innerHTML = 'Classe A'
+        }else if(renda > 2500){
+            msg.innerHTML = 'Classe B'
+        }else if(renda > 900){
+            msg.innerHTML = 'Classe C'
+        }else if(renda > 250){
+            msg.innerHTML = 'Classe D'
+        }else{
+            msg.innerHTML = 'Classe E'
+        }
+        
+    }
+</script>

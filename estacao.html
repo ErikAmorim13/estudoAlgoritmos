@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estações do ano</title>
+</head>
+<body>
+    Em qual mês estamos? <input id="ipt_mes">
+    <p></p>
+    <button onclick="estacao()">Ver estação do ano</button>
+    <p></p>
+    <span id="msg"></span>
+    
+</body>
+</html>
+
+<script>
+    function estacao(){
+        var mes = ipt_mes.value
+        
+        if(mes == 'Março'){
+            msg.innerHTML = `<img src="outono.jpg" height="100px"> 
+            <p>Outono</p>`
+        }else if(mes == 'Abril'){
+            msg.innerHTML = `<img src="outono.jpg" height="100px"> 
+            <p>Outono</p>`
+        }else if(mes == 'Maio'){
+            msg.innerHTML = `<img src="outono.jpg" height="100px"> 
+            <p>Outono</p>`
+        }else if(mes == 'Junho'){
+            msg.innerHTML = `<img src="inverno.jpg" height="100px">
+            <p>Inverno</p>`
+        }else if(mes == 'Julho'){
+            msg.innerHTML = `<img src="inverno.jpg" height="100px">
+            <p>Inverno</p>`
+        }else if(mes == 'Agosto'){
+            msg.innerHTML = `<img src="inverno.jpg" height="100px">
+            <p>Inverno</p>`
+        }else if(mes == 'Setembro'){
+            msg.innerHTML = `<img src="primavera.jpg" height="100px">
+            <p>Primavera</p>`
+        }else if(mes == 'Outubro'){
+            msg.innerHTML = `<img src="primavera.jpg" height="100px">
+            <p>Primavera</p>`
+        }else if(mes == 'Novembro'){
+            msg.innerHTML = `<img src="primavera.jpg" height="100px">
+            <p>Primavera</p>`
+        }else{
+            msg.innerHTML = `<img src="verao.jpg" height="100px">
+            <p>Verão</p>`
+        }
+    }
+</script>

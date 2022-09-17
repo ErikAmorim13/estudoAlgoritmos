@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutricionista</title>
+</head>
+<body>
+    Quantos pães franceses por dia?: <input id="ipt_pao">
+    <p></p>
+    Quantas bolachas recheadas por dia?: <input id="ipt_bolacha">
+    <p></p>
+    Quantos achocolatados por dia? <input id="ipt_toddy">
+    <p></p>
+    <button onclick="calcula()">Verificar Calorias</button>
+    <p></p>
+    <span id="msg"></span>
+    
+</body>
+</html>
+
+<script>
+    function calcula() {
+        var pao = Number(ipt_pao.value) * 50
+        var bolacha = Number(ipt_bolacha.value) * 80
+        var toddy = Number(ipt_toddy.value) * 70
+        var calorias = pao + bolacha + toddy
+
+        if(calorias > 400){
+            msg.innerHTML = `Você consome ${calorias} calorias por dia, não vão te reconhecer após a pandemia!`
+        }else if(calorias > 200){
+            msg.innerHTML = `Você consome ${calorias} calorias por dia, cuidado! Vai ficar fofinho...`
+        }else{
+            msg.innerHTML = `Você consome ${calorias} calorias por dia, parabéns! Vai sair em forma da pandemia.`
+        }
+
+        
+    }
+</script>
